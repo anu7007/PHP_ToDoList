@@ -15,15 +15,23 @@ else{
 //edit button
 if(isset($_POST['editButton'])){
     $_SESSION['myVar']=$_SESSION['todo'][$_POST['mVal']];
-    unset($_SESSION['todo'][$_POST['mVal']]);
+    // unset($_SESSION['todo'][$_POST['mVal']]);
     if(isset($_SESSION['myVar'])){
         $_SESSION['count']=1;
     }else{
         $_SESSION['count']=0;
     }
 }
-if(isset($_POST['addBtn'])){
+if(isset($_POST['updateBtn'])){
     $_SESSION['count']=0;
+    $_SESSION['myVar']=$_SESSION['todo'][$_POST['mVal']];
+    $_SESSION['todo'][$_POST['mVal']] = $_POST['input'];
+    array_splice($_SESSION['todo'],$_POST['mVal'],1); 
+    if(isset($_SESSION['myVar'])){
+        $_SESSION['count']=1;
+    }else{
+        $_SESSION['count']=0;
+    }
 }
 //delete button
 if(isset($_POST['deleteBtn'])){

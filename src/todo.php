@@ -16,15 +16,19 @@ session_start();
                 <?php
                 if($_SESSION['count']==0){
                     ?>
+                    <button name="addBtn">
                     Add
+                    </button>
                 <?php
                 }else{
                     ?>
+                    <button name="updateBtn">
                     Update
+                    </button>
                 <?php
                 $_SESSION['count']=0;
                 }
-                ?></button>
+                ?>
             </form>
     
             <h3>Todo</h3>
