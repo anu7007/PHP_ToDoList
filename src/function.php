@@ -2,14 +2,16 @@
 session_start();
 //add items in todo list
 if(isset($_POST['addBtn'])){
+    if(!empty($_POST['input'])){
     if(isset($_SESSION['todo'])){
         array_push($_SESSION['todo'],$_POST['input']);
-    }else{
+    }
+else{
         $_SESSION['todo']=array($_POST['input']);
 
     }
     }
-
+}
 //edit button
 if(isset($_POST['editButton'])){
     $_SESSION['myVar']=$_SESSION['todo'][$_POST['mVal']];
@@ -50,5 +52,6 @@ if(isset($_POST['editButton2'])){
 if(isset($_POST['deleteBtn2'])){
     unset($_SESSION['checkBox'][$_POST['mVal']]);
 }
+
 header('location: todo.php');
 ?>

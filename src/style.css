@@ -157,7 +157,7 @@ ul li.editMode input[type=text] {
 ul li.editMode label {
 	display: none;
 }
-.action{
+button{
 	text-decoration: none;
 	color: red;
 	float: right;
